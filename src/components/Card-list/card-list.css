@@ -1,4 +1,22 @@
+.card-list-container {
+  margin: 20px;
+}
+
+.card-list-head {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 500px;
+}
+
 .card-list {
   display: flex;
   flex-direction: row;
+  gap: 10px;
+}
+
+@media only screen and (max-width : 480px) {
+  .card-list {
+    flex-direction: column;
+  }
 }
