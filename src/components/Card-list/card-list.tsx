@@ -32,7 +32,6 @@ const CardList: React.FC = () => {
       })
       .then((response) => response.json())
       .then(({ data, errors }) => {
-        console.log("testt", data);
         if (errors) {
           console.error(errors);
         }
@@ -51,17 +50,11 @@ const CardList: React.FC = () => {
         }}
       />
       <div className="card-list">
-        {page
+        {page && page
           .filter((val) => {
-            if (searchTerm == "") {
-              return val;
-            } else if (
-              val.title
-                .toLocaleLowerCase()
-                .includes(searchTerm.toLocaleLowerCase())
-            ) {
-              return val;
-            }
+            return val ? searchTerm === "" || val.title
+            .toLocaleLowerCase()
+            .includes(searchTerm.toLocaleLowerCase()) : ''
           })
           .map((item: Icard) => (
             <Card
