@@ -1,8 +1,8 @@
 import React from "react";
-import { Icard } from "../../Interfaces/interface";
+import { ICard } from '../../Interfaces/card.interface';
 import "./card.css";
 
-const Card: React.FC<Icard> = ({ title, price, itemImage }) => {
+const Card: React.FC<ICard> = ({ title, price, itemImage }) => {
   return (
     <div className="card-container">
       <img alt="monster" className="items" src={itemImage?.url} />

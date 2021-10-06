@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Icard } from "../../Interfaces/interface";
+import { ICard } from "../../Interfaces/card.interface";
 import Card from "../Card/card";
 import "./card-list.css";
 
@@ -56,7 +56,7 @@ const CardList: React.FC = () => {
             .toLocaleLowerCase()
             .includes(searchTerm.toLocaleLowerCase()) : ''
           })
-          .map((item: Icard) => (
+          .map((item: ICard) => (
             <Card
               key={item.title}
               title={item.title}
