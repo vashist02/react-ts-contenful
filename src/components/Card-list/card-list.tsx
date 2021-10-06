@@ -35,6 +35,8 @@ const CardList: React.FC = () => {
     <div className="card-list-container">
       <div className="card-list-head">
         <h1>Produits Imitations En Promotion</h1>
+        <p>Prend zot ban produits ki casser. Zis tout produits casser mais li ena chance marcher. <strong>We are better than Weshare.</strong>.</p>
+        <p>Avoye nous zot billet monopoly par MCB Coffee.</p>
         <input
           type="text"
           placeholder="Search..."
