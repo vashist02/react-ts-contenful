@@ -1,13 +1,20 @@
+/* Globals */
 * {
   margin: 0;
   padding: 0;
   font-family: monospace;
+  text-decoration: none;
+}
+
+a {
+  color: unset;
 }
 
 h1 {
   text-align: left;
 }
 
+/* Inputs */
 input {
   margin-bottom: 20px;
   padding: 8px 5px;
@@ -19,6 +26,7 @@ input:focus {
   border: 1px solid #b01619;
 }
 
+/* Buttons */
 .btn {
   width: 115px;
   margin: 0 auto;

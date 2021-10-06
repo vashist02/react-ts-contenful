@@ -7,11 +7,15 @@ import "./card-list.css";
 const query = `{
   itemCollection {
     items {
+      sys {
+        id
+      }
       title
       price
       itemImage{
        url
       }
+      path
     }
   }
 }`;
@@ -54,12 +58,14 @@ const CardList: React.FC = () => {
           })
           .map((item: ICard) => (
             <Card
-              key={item.title}
+              key={item.sys.id}
+              sys={{id: item.sys?.id}}
               title={item.title}
               price={item.price}
               itemImage={{
                 url: item.itemImage?.url,
               }}
+              path={item.path}
             />
           ))}
       </div>
