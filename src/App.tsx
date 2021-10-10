@@ -12,7 +12,7 @@ function App() {
           <Route exact path="/">
             <CardList />
           </Route>
-          <Route path="/detail/:id">
+          <Route path="/detail/:path">
             <Detail />
           </Route>
         </Switch>

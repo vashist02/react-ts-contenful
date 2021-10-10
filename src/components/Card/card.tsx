@@ -20,13 +20,13 @@ export const Card: React.FC<ICard> = ({
 }) => {
   return (
     <div className="card-container">
-      <Link to={`/detail/${sys.id}`}>
+      <Link to={`/detail${path}`}>
         <div className="card-thumbnail">
           <img alt="monster" className="items" src={itemImage?.url} />
         </div>
       </Link>
       <div className="card-details">
-        <Link to={`/detail/${sys.id}`}>
+        <Link to={`/detail${path}`}>
           <h2>{title}</h2>
         </Link>
         <p>{price}</p>

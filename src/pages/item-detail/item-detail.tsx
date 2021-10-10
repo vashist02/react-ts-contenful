@@ -6,16 +6,24 @@ import { GraphQLService } from '../../services/graphql.service';
 import './item-detail.css';
 
 export const Detail: React.FC = () => {
-  const { id } = useParams<IURLParams>();
+  const { path } = useParams<IURLParams>();
 
   const query = `{
-    item (id: "${id}") {
-    title
-    price
-    itemImage{
-      url
-    }
-    path
+    itemCollection(where: {
+      path: "/${path}"
+    }) {
+      items {
+        sys {
+          id
+        }
+        title
+        price
+        description
+        itemImage{
+        url
+        }
+        path
+      }
     }
   }`;
 
@@ -29,7 +37,7 @@ export const Detail: React.FC = () => {
         if (errors) {
           console.error(errors);
         }
-        setDetailPage(data.item);
+        setDetailPage(data.itemCollection.items[0]);
       });
   }, [query]);
 
@@ -41,6 +49,7 @@ export const Detail: React.FC = () => {
           <div className="item-detail-details">
             <h2>{detail?.title}</h2>
             <p>{detail?.price}</p>
+            <p>{detail?.description}</p>
             <div className="item-detail-actions">
               <div className="item-btn">
                 <button className="btn">Add to Cart</button>

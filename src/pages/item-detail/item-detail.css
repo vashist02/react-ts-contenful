@@ -3,6 +3,12 @@
   gap: 20px;
 }
 
+@media only screen and (max-width: 480px) {
+  .item-detail-wrapper {
+    flex-direction: column;
+  }
+}
+
 img {
   width: 200px;
 }

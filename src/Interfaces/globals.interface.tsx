@@ -1,3 +1,4 @@
 export type IURLParams = {
-  id: string;
+  id?: string;
+  path?: string;
 };
