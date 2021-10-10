@@ -1,5 +1,5 @@
 import React from 'react';
-import { ICard } from '../../Interfaces/card.interface';
+import { ICard } from '../../interfaces/card.interface';
 import { Link } from 'react-router-dom';
 import './card.css';
 
@@ -26,9 +26,9 @@ export const Card: React.FC<ICard> = ({
         </div>
       </Link>
       <div className="card-details">
-        <a href={path}>
+        <Link to={`/detail/${sys.id}`}>
           <h2>{title}</h2>
-        </a>
+        </Link>
         <p>{price}</p>
         <button className="btn" onClick={() => addToCart(sys.id)}>
           Add to Cart

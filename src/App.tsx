@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
-import { CardList } from './components/Card-list/card-list';
-import { Detail } from './pages/detail/detail';
+import { CardList } from './components/card-list/card-list';
+import { Detail } from './pages/item-detail/item-detail';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 function App() {

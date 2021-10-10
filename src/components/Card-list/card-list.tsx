@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { ICard } from '../../Interfaces/card.interface';
+import { ICard } from '../../interfaces/card.interface';
 import { GraphQLService } from '../../services/graphql.service';
-import { Card } from '../Card/card';
+import { Card } from '../card/card';
 import './card-list.css';
 
 const query = `{
@@ -37,7 +37,7 @@ export const CardList: React.FC = () => {
   }, []);
 
   return (
-    <div className="card-list-container">
+    <div className="container">
       <div className="card-list-head">
         <h1>Produits Imitations En Promotion</h1>
         <p>
