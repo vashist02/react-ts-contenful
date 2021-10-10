@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
-import Card from "../../components/Card/card";
 import { ICard } from "../../Interfaces/card.interface";
 import { GraphQLService } from "../../services/graphql.service";
 
 const url = window.location.pathname;
 const id = url.substring(url.lastIndexOf("/") + 1, url.length);
-console.log("test2", id);
+console.log('Detail loaded')
 
 const query = `{
     item (id: "${id}") {
@@ -20,7 +19,7 @@ const query = `{
        
 }`;
 export const Detail: React.FC = () => {
-  const [detail, setDetailPage] = useState();
+  const [detail, setDetailPage] = useState<ICard>();
   useEffect(() => {
     const gqlService = new GraphQLService();
     const data = gqlService.fetch("POST", query);
@@ -33,7 +32,12 @@ export const Detail: React.FC = () => {
         setDetailPage(data.item);
       });
   }, []);
-  console.log("test1", detail.title);
 
-  return <div></div>;
+  return (
+    <div className="item-detail-container">
+    {detail && (
+      <div>{detail?.title}</div>
+    )}
+    </div>
+  )
 };
