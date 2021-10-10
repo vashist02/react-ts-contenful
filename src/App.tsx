@@ -1,13 +1,8 @@
-import React from "react";
-import "./App.css";
-import CardList from "./components/Card-list/card-list";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Redirect,
-} from "react-router-dom";
-import { Detail } from "./pages/detail/detail";
+import React from 'react';
+import './App.css';
+import { CardList } from './components/Card-list/card-list';
+import { Detail } from './pages/detail/detail';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 function App() {
   return (
@@ -17,7 +12,7 @@ function App() {
           <Route exact path="/">
             <CardList />
           </Route>
-          <Route path="/detail">
+          <Route path="/detail/:id">
             <Detail />
           </Route>
         </Switch>

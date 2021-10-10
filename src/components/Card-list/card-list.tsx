@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
-import { ICard } from "../../Interfaces/card.interface";
-import { GraphQLService } from "../../services/graphql.service";
-import Card from "../Card/card";
-import "./card-list.css";
+import React, { useState, useEffect } from 'react';
+import { ICard } from '../../Interfaces/card.interface';
+import { GraphQLService } from '../../services/graphql.service';
+import { Card } from '../Card/card';
+import './card-list.css';
 
 const query = `{
   itemCollection {
@@ -20,12 +20,12 @@ const query = `{
   }
 }`;
 
-const CardList: React.FC = () => {
-  const [searchTerm, setSearchTerm] = useState("");
+export const CardList: React.FC = () => {
+  const [searchTerm, setSearchTerm] = useState('');
   const [page, setPage] = useState<any[]>([]);
   useEffect(() => {
     const gqlService = new GraphQLService();
-    const data = gqlService.fetch("POST", query);
+    const data = gqlService.fetch('POST', query);
     data
       .then((response) => response.json())
       .then(({ data, errors }) => {
@@ -58,11 +58,11 @@ const CardList: React.FC = () => {
           page
             .filter((val) => {
               return val
-                ? searchTerm === "" ||
+                ? searchTerm === '' ||
                     val.title
                       .toLocaleLowerCase()
                       .includes(searchTerm.toLocaleLowerCase())
-                : "";
+                : '';
             })
             .map((item: ICard) => (
               <Card
@@ -80,5 +80,3 @@ const CardList: React.FC = () => {
     </div>
   );
 };
-
-export default CardList;

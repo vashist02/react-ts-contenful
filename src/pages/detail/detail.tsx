@@ -1,12 +1,13 @@
-import React, { useState, useEffect } from "react";
-import { ICard } from "../../Interfaces/card.interface";
-import { GraphQLService } from "../../services/graphql.service";
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import { ICard } from '../../Interfaces/card.interface';
+import { IURLParams } from '../../Interfaces/globals.interface';
+import { GraphQLService } from '../../services/graphql.service';
 
-const url = window.location.pathname;
-const id = url.substring(url.lastIndexOf("/") + 1, url.length);
-console.log('Detail loaded')
+export const Detail: React.FC = () => {
+  const { id } = useParams<IURLParams>();
 
-const query = `{
+  const query = `{
     item (id: "${id}") {
     title
     price
@@ -15,14 +16,12 @@ const query = `{
     }
     path
     }
-     
-       
-}`;
-export const Detail: React.FC = () => {
+  }`;
+
   const [detail, setDetailPage] = useState<ICard>();
   useEffect(() => {
     const gqlService = new GraphQLService();
-    const data = gqlService.fetch("POST", query);
+    const data = gqlService.fetch('POST', query);
     data
       .then((response) => response.json())
       .then(({ data, errors }) => {
@@ -31,13 +30,11 @@ export const Detail: React.FC = () => {
         }
         setDetailPage(data.item);
       });
-  }, []);
+  }, [query]);
 
   return (
     <div className="item-detail-container">
-    {detail && (
-      <div>{detail?.title}</div>
-    )}
+      {detail && <div>{detail?.title}</div>}
     </div>
-  )
+  );
 };
