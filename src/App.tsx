@@ -1,13 +1,15 @@
 import React from 'react';
 import './App.css';
+import { Header } from './components/header/header';
 import { CardList } from './components/card-list/card-list';
 import { Detail } from './pages/item-detail/item-detail';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
+    <div className="app">
       <Router>
+        <Header />
         <Switch>
           <Route exact path="/">
             <CardList />
