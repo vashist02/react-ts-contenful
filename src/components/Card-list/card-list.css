@@ -12,6 +12,10 @@
 }
 
 @media only screen and (max-width: 480px) {
+  .card-list-head {
+    width: auto;
+  }
+
   .card-list {
     flex-direction: column;
   }
