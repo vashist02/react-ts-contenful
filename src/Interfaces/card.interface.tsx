@@ -1,11 +1,11 @@
 export interface ICard {
   sys: {
-    id: string
+    id: string;
   };
   title: string;
   price: string;
-  itemImage?: { 
-    url?: string 
+  itemImage?: {
+    url?: string;
   };
-  path: string
+  path: string;
 }
