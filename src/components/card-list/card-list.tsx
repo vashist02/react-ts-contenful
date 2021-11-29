@@ -22,6 +22,7 @@ const query = `{
 
 export const CardList: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [page, setPage] = useState<any[]>([]);
   useEffect(() => {
     const gqlService = new GraphQLService();
@@ -30,7 +31,7 @@ export const CardList: React.FC = () => {
       .then((response) => response.json())
       .then(({ data, errors }) => {
         if (errors) {
-          console.error(errors);
+          throw errors;
         }
         setPage(data.itemCollection.items);
       });
