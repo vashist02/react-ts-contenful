@@ -1,6 +1,6 @@
 import React from 'react';
 import './styles/App.scss';
-import { Header } from './components/header/header';
+import { Header } from './common/header/header';
 import { CardList } from './components/card-list/card-list';
 import { Detail } from './pages/item-detail/item-detail';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
