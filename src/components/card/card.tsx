@@ -1,7 +1,7 @@
 import React from 'react';
 import { ICard } from '../../interfaces/card.interface';
 import { Link } from 'react-router-dom';
-import './card.css';
+import './card.scss';
 
 const cartsItems: string[] = [];
 
@@ -19,13 +19,13 @@ export const Card: React.FC<ICard> = ({
   path,
 }) => {
   return (
-    <div className="card-container">
+    <div className="card__container">
       <Link to={`/detail${path}`}>
-        <div className="card-thumbnail">
-          <img alt="monster" className="items" src={itemImage?.url} />
+        <div className="card__thumbnail">
+          <img alt="monster" className="card__item" src={itemImage?.url} />
         </div>
       </Link>
-      <div className="card-details">
+      <div className="card__details">
         <Link to={`/detail${path}`}>
           <h2>{title}</h2>
         </Link>

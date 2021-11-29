@@ -1,0 +1,22 @@
+.card {
+  &__head {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 500px;
+
+    @media only screen and (max-width: 480px) {
+      width: auto;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+
+    @media only screen and (max-width: 480px) {
+      flex-direction: column;
+    }
+  }
+}
