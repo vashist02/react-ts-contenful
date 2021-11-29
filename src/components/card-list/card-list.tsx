@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { ICard } from '../../interfaces/card.interface';
 import { GraphQLService } from '../../services/graphql.service';
 import { Card } from '../card/card';
-import './card-list.css';
+import './card-list.scss';
 
 const query = `{
   itemCollection {
@@ -38,8 +38,8 @@ export const CardList: React.FC = () => {
   }, []);
 
   return (
-    <div className="container">
-      <div className="card-list-head">
+    <div className="global__container">
+      <div className="card__head">
         <h1>Produits Imitations En Promotion</h1>
         <p>
           Prend zot ban produits ki casser. Zis tout produits casser mais li ena
@@ -54,7 +54,7 @@ export const CardList: React.FC = () => {
           }}
         />
       </div>
-      <div className="card-list">
+      <div className="card__list">
         {page &&
           page
             .filter((val) => {
