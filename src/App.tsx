@@ -5,7 +5,7 @@ import { CardList } from './components/card-list/card-list';
 import { Detail } from './pages/item-detail/item-detail';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-function App() {
+function App(): React.ReactElement {
   return (
     <div className="app">
       <Router>

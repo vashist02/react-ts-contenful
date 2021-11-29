@@ -35,7 +35,7 @@ export const Detail: React.FC = () => {
       .then((response) => response.json())
       .then(({ data, errors }) => {
         if (errors) {
-          console.error(errors);
+          throw errors;
         }
         setDetailPage(data.itemCollection.items[0]);
       });
