@@ -1,20 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './header.css';
+import './header.scss';
 
 export const Header: React.FC<any> = () => {
   return (
     <header>
-      <div className="brand">
+      <div className="header__brand">
         <h1>Imitations.mu</h1>
       </div>
-      <nav className="navigation">
-        <ul className="navigation-list">
-          <li className="navigation-list-item">
+      <nav className="header__navigation">
+        <ul className="navigation__list">
+          <li className="navigation__item">
             <Link to={`/profile`}>Profile</Link>
           </li>
-          <li className="navigation-list-item">
-            <span className="cart-count">10</span>
+          <li className="navigation__item cart">
+            <span className="cart__count">10</span>
             <Link to={`/cart`}>Cart</Link>
           </li>
         </ul>

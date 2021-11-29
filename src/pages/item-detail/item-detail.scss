@@ -1,0 +1,26 @@
+.item-detail {
+  &__wrapper {
+    display: flex;
+    gap: 20px;
+
+    @media only screen and (max-width: 480px) {
+      flex-direction: column;
+    }
+  }
+
+  &__image {
+    width: 200px;
+  }
+
+  &__details {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__actions {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: flex-end;
+  }
+}

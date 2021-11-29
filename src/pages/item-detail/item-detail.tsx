@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { ICard } from '../../interfaces/card.interface';
 import { IURLParams } from '../../interfaces/globals.interface';
 import { GraphQLService } from '../../services/graphql.service';
-import './item-detail.css';
+import './item-detail.scss';
 
 export const Detail: React.FC = () => {
   const { path } = useParams<IURLParams>();
@@ -42,16 +42,20 @@ export const Detail: React.FC = () => {
   }, [query]);
 
   return (
-    <div className="container">
+    <div className="global__container">
       {detail && (
-        <div className="item-detail-wrapper">
-          <img src={detail?.itemImage?.url} alt="item-img" />
-          <div className="item-detail-details">
+        <div className="item-detail__wrapper">
+          <img
+            className="item-detail__image"
+            src={detail?.itemImage?.url}
+            alt="item-img"
+          />
+          <div className="item-detail__details">
             <h2>{detail?.title}</h2>
             <p>{detail?.price}</p>
             <p>{detail?.description}</p>
-            <div className="item-detail-actions">
-              <div className="item-btn">
+            <div className="item-detail__actions">
+              <div className="item-detail__button">
                 <button className="btn">Add to Cart</button>
               </div>
             </div>
