@@ -30,6 +30,24 @@ To run the application locally, it is the same as running any React application.
 $ npm run start
 ```
 
+## React Component Scaffolding
+
+You can scaffold React components using a script that has been added to the project.
+
+The following command can be used to automatically generate a boilerplate React component.
+
+**Note**: This command needs to be executed from the **root** of the project.
+
+```
+$ npm run generate:component <component-name>
+```
+
+3 types of prompts would be displayed which all of them accept "yes(y) / no(n)" as answers.
+
+- Does the component has props? (If yes, an interface will be automatically added).
+- Does the component has Storybook integration? (If yes, a `.stories.tsx` file will be added with basic Storybook templating.)
+- Will the component be shared? (If yes, the component will reside in the `common` directory instead of the `components` directory.)
+
 ## Contributors
 
 The application is written and maintained by the 2 following geeks:
