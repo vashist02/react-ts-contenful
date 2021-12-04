@@ -7,13 +7,15 @@
 const component = (name: string, hasProps: string) => {
   const importReact = `import React from 'react';`.trim();
   const importScss = `import './${name}.scss';`.trim();
-  const addInterface = `export interface I${toCamelCase(name)}Props {}`;
-  const renderFunctionWithProps = `export const ${toCamelCase(
+  const addInterface = `export interface I${convertToPascalCase(name)}Props {}`;
+  const renderFunctionWithProps = `export const ${convertToPascalCase(
     name
-  )}: React.FC = ({}: I${toCamelCase(name)}Props) => {
+  )}: React.FC<I${convertToPascalCase(
+    name
+  )}Props> = ({}: I${convertToPascalCase(name)}Props) => {
     return <div>Hello 👋, I am a ${name} component.</div>;
   };`;
-  const renderFunctionNoProps = `export const ${toCamelCase(
+  const renderFunctionNoProps = `export const ${convertToPascalCase(
     name
   )}: React.FC = () => {
     return <div>Hello 👋, I am a ${name} component.</div>;
@@ -45,15 +47,17 @@ const story = (name: string) => {
   const importReact = `import React from 'react';`.trim();
   const importStorybook =
     `import { ComponentStory, ComponentMeta } from '@storybook/react';`.trim();
-  const importComponent = `import { ${toCamelCase(name)} } from './${name}';`;
+  const importComponent = `import { ${convertToPascalCase(
+    name
+  )} } from './${name}';`;
   const exportDefaultStory = `export default {
     title: 'Custom/${name}',
-    component: ${toCamelCase(name)}
-  } as ComponentMeta<typeof ${toCamelCase(name)}>`;
-  const buildTemplate = `const Template: ComponentStory<typeof ${toCamelCase(
+    component: ${convertToPascalCase(name)}
+  } as ComponentMeta<typeof ${convertToPascalCase(name)}>`;
+  const buildTemplate = `const Template: ComponentStory<typeof ${convertToPascalCase(
     name
   )}> = (args) => (
-    <${toCamelCase(name)} {...args} />
+    <${convertToPascalCase(name)} {...args} />
     );`;
   const renderPrimary = `export const Primary = Template.bind({});`;
 
@@ -78,7 +82,7 @@ const story = (name: string) => {
  * @param str The name of the component to format to camel case.
  * @returns The formatted camel case component name.
  */
-const toCamelCase = (str: string) => {
+const convertToPascalCase = (str: string) => {
   return `${str}`
     .replace(new RegExp(/[-_]+/, 'g'), ' ')
     .replace(new RegExp(/[^\w\s]/, 'g'), '')
