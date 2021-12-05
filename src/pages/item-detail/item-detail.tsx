@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { ICard } from '../../interfaces/card.interface';
 import { IURLParams } from '../../interfaces/globals.interface';
 import { GraphQLService } from '../../services/graphql.service';
+import { addToCart } from '../../store/slices/cart';
 import './item-detail.scss';
 
 export const Detail: React.FC = () => {
@@ -41,6 +43,11 @@ export const Detail: React.FC = () => {
       });
   }, [query]);
 
+  const dispatch = useDispatch();
+  const handleAddCart = () => {
+    dispatch(addToCart({ items: detail?.sys.id }));
+  };
+
   return (
     <div className="global__container">
       {detail && (
@@ -56,7 +63,9 @@ export const Detail: React.FC = () => {
             <p>{detail?.description}</p>
             <div className="item-detail__actions">
               <div className="item-detail__button">
-                <button className="btn">Add to Cart</button>
+                <button className="btn" onClick={handleAddCart}>
+                  Add to Cart
+                </button>
               </div>
             </div>
           </div>
