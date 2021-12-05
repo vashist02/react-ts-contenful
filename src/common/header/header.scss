@@ -10,6 +10,12 @@ header {
   align-items: center;
 
   .header {
+    &__brand {
+      a {
+        display: inline-block;
+      }
+    }
+
     &__logo {
       height: 50px;
       margin: 20px 0;

@@ -10,7 +10,9 @@ export const Header: React.FC = () => {
   return (
     <header>
       <div className="header__brand">
-        <img className="header__logo" src={logo} alt="imitation-logo" />
+        <Link to={'/'}>
+          <img className="header__logo" src={logo} alt="imitation-logo" />
+        </Link>
       </div>
       <nav className="header__navigation">
         <ul className="navigation__list">
