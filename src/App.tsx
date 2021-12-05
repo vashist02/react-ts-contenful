@@ -1,6 +1,7 @@
 import React from 'react';
 import './styles/App.scss';
 import { Header } from './common/header/header';
+import { Footer } from './common/footer/footer';
 import { CardList } from './components/card-list/card-list';
 import { Detail } from './pages/item-detail/item-detail';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
@@ -18,6 +19,7 @@ function App(): React.ReactElement {
             <Detail />
           </Route>
         </Switch>
+        <Footer />
       </Router>
     </div>
   );
