@@ -1,15 +1,9 @@
 import React from 'react';
 import { ICard } from '../../interfaces/card.interface';
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../../store/slices/cart';
 import './card.scss';
-
-const cartsItems: string[] = [];
-
-const addToCart = (id: string) => {
-  cartsItems.push(id);
-  // console.log('Card Debug', `Added to Cart with id ${id} CLICKED`);
-  // console.log('Card Debug Items', cartsItems);
-};
 
 export const Card: React.FC<ICard> = ({
   sys,
@@ -18,6 +12,10 @@ export const Card: React.FC<ICard> = ({
   itemImage,
   path,
 }) => {
+  const dispatch = useDispatch();
+  const handleAddCart = () => {
+    dispatch(addToCart({ items: sys.id }));
+  };
   return (
     <div className="card__container">
       <Link to={`/detail${path}`}>
@@ -30,7 +28,7 @@ export const Card: React.FC<ICard> = ({
           <h2>{title}</h2>
         </Link>
         <p>{price}</p>
-        <button className="btn" onClick={() => addToCart(sys.id)}>
+        <button className="btn" onClick={() => handleAddCart}>
           Add to Cart
         </button>
       </div>

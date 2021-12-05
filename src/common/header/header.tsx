@@ -1,8 +1,11 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { TStore } from '../../store';
 import './header.scss';
 
 export const Header: React.FC = () => {
+  const { items } = useSelector((state: TStore) => state.cartReducer);
   return (
     <header>
       <div className="header__brand">
@@ -14,7 +17,7 @@ export const Header: React.FC = () => {
             <Link to={`/profile`}>Profile</Link>
           </li>
           <li className="navigation__item cart">
-            <span className="cart__count">10</span>
+            <span className="cart__count">{items.length}</span>
             <Link to={`/cart`}>Cart</Link>
           </li>
         </ul>
