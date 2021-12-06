@@ -18,6 +18,8 @@ function App(): React.ReactElement {
           <Route path="/detail/:path">
             <Detail />
           </Route>
+
+          {/* <Route path="*" component={Header} />  // TODO Implement not found error page */}
         </Switch>
         <Footer />
       </Router>
