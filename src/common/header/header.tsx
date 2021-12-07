@@ -47,7 +47,9 @@ export const Header: React.FC = () => {
 
       <div className="header__cart">
         <span className="cart__count">{items.length}</span>
-        <Link to={`/cart`}>Cart</Link>
+        <Link to={`/cart`}>
+          <i className="fas fa-shopping-cart"></i>
+        </Link>
       </div>
 
       <nav
