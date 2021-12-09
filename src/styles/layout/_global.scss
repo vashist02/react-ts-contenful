@@ -7,5 +7,10 @@
 }
 
 .global__container {
-  margin: 20px;
+  margin: 0 20px;
+  padding-top: 95px;
+
+  @media (max-width: 600px) {
+    padding-top: 55px;
+  }
 }
