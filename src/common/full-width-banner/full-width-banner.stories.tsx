@@ -2,10 +2,10 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import banner from '../../assets/banner.png';
 
-import { FullWidthBanner } from './fullWidth-banner';
+import { FullWidthBanner } from './full-width-banner';
 
 export default {
-  title: 'Custom/fullWidth-banner',
+  title: 'Common/Full Width Banner',
   component: FullWidthBanner,
 } as ComponentMeta<typeof FullWidthBanner>;
 
@@ -20,4 +20,5 @@ Primary.args = {
     'Prend zot ban produits ki casser. Zis tout produits casser mais li ena chance marcher. We are better than Weshare..',
   image: banner,
   ctaTitle: 'See Products',
+  imageAlt: 'imitation-banner',
 };

@@ -1,12 +1,12 @@
 import React from 'react';
-import './fullWidth-banner.scss';
-import banner from '../../assets/banner.png';
+import './full-width-banner.scss';
 
 export interface IFullWidthBannerProps {
   title: string;
   description: string;
   image: string;
   ctaTitle: string;
+  imageAlt: string;
 }
 
 export const FullWidthBanner: React.FC<IFullWidthBannerProps> = ({
@@ -14,20 +14,17 @@ export const FullWidthBanner: React.FC<IFullWidthBannerProps> = ({
   description,
   image,
   ctaTitle,
+  imageAlt,
 }: IFullWidthBannerProps) => {
   return (
     <div className="banner__wrapper">
-      <div className="wrapper__description">
+      <div className="banner__description">
         <h1>{title}</h1>
-        <span>{description}</span>
+        <p>{description}</p>
         <button>{ctaTitle}</button>
       </div>
-      <div className="wrapper__image">
-        <img
-          className="wrapper__banner-image"
-          src={image}
-          alt="imitation-banner"
-        />
+      <div className="banner__image-wrapper">
+        <img className="banner__image-image" src={image} alt={imageAlt} />
       </div>
     </div>
   );

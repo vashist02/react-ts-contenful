@@ -28,7 +28,7 @@ export const Card: React.FC<ICard> = ({
           <h2>{title}</h2>
         </Link>
         <p>{price}</p>
-        <button className="btn" onClick={() => handleAddCart}>
+        <button className="btn" onClick={() => handleAddCart()}>
           Add to Cart
         </button>
       </div>

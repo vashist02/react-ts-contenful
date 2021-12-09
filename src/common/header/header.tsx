@@ -19,12 +19,6 @@ export const Header: React.FC = () => {
           <img className="header__logo" src={logo} alt="imitation-logo" />
         </Link>
       </div>
-      {/* <nav
-        className={
-          isClicked ? 'header__navigation' : 'header__navigation-mobile'
-        }
-      > */}
-
       <nav className="header__navigation">
         <ul className="navigation__list">
           <li className="navigation__item">
@@ -48,12 +42,16 @@ export const Header: React.FC = () => {
       <div className="header__cart">
         <span className="cart__count">{items.length}</span>
         <Link to={`/cart`}>
-          <i className="fas fa-shopping-cart"></i>
+          <i className="fas fa-shopping-cart icon__cart"></i>
         </Link>
       </div>
 
       <nav
-        className={`mobile__navigation ${isClicked ? 'active' : 'not-active'}`}
+        className={`header__mobile-navigation ${
+          isClicked
+            ? 'header__mobile-navigation--active'
+            : 'header__mobile-navigation--not-active'
+        }`}
       >
         <ul className="navigation__list" onClick={toggleClicked}>
           <li className="navigation__item">
@@ -74,8 +72,12 @@ export const Header: React.FC = () => {
         </ul>
       </nav>
 
-      <div className="mobile-nav" onClick={toggleClicked}>
-        <i className={isClicked ? 'fas fa-times' : 'fas fa-bars'}></i>
+      <div className="header__navigation--mobile" onClick={toggleClicked}>
+        <i
+          className={
+            isClicked ? 'fas fa-times icon__close' : 'fas fa-bars icon__burger'
+          }
+        ></i>
       </div>
     </header>
   );
