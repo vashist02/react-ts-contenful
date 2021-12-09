@@ -68,7 +68,7 @@ header {
     }
   }
 
-  @media (max-width: 375px) {
+  @media only screen and (max-width: 600px) {
     padding: 0 10px;
     position: relative;
     .header {
