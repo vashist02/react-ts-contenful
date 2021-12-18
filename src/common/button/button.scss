@@ -1,0 +1,31 @@
+button {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+
+  &.primary {
+    background-color: var(--oxford-blue);
+    color: var(--anti-flash-white);
+
+    &:hover {
+      background-color: var(--anti-flash-white);
+      color: var(--oxford-blue);
+    }
+  }
+
+  &.secondary {
+    background-color: var(--anti-flash-white);
+    color: var(--oxford-blue);
+
+    &:hover {
+      background-color: var(--oxford-blue);
+      color: var(--anti-flash-white);
+    }
+  }
+}
