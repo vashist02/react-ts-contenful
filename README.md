@@ -7,8 +7,9 @@ It uses an e-shopping application as example.
 
 - React
 - TypeScript
-- Contentful CMS
-- Redux (To be Added)
+- [Contentful CMS](https://www.contentful.com/)
+- [Storybook](https://storybook.js.org/)
+- [Redux Toolkit](https://redux-toolkit.js.org/)
 
 ## Installation Steps
 
