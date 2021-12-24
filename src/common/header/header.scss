@@ -1,8 +1,7 @@
 @import '../../styles/abstracts/mixins';
 
 header {
-  display: grid;
-  grid-template-columns: 3fr 3fr 1fr;
+  @include display-grid(3fr 1fr 1fr);
   @include box-shadow(
     (0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 2px 6px 2px rgba(60, 64, 67, 0.15))
   );
@@ -15,8 +14,6 @@ header {
   background: var(--white);
 
   .header {
-    display: flex;
-    justify-content: space-between;
     &__brand {
       a {
         display: inline-block;
@@ -30,13 +27,10 @@ header {
 
     &__navigation {
       height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-
+      @include display-flex(flex-end, center);
       .navigation {
         &__list {
-          display: flex;
+          @include display-flex();
           gap: 25px;
         }
 
@@ -57,8 +51,7 @@ header {
     }
 
     &__cart {
-      display: flex;
-      justify-content: flex-end;
+      @include display-flex(flex-end);
       position: relative;
 
       .cart {
@@ -89,7 +82,7 @@ header {
     }
   }
 
-  @media only screen and (max-width: 768px) {
+  @include respond-below(xs) {
     .header {
       &__logo {
         margin: 10px 0;
@@ -100,17 +93,13 @@ header {
         display: none;
 
         &--mobile {
-          display: flex;
-          justify-content: flex-end;
+          @include display-flex(flex-end);
           z-index: 1;
         }
       }
 
       &__mobile-navigation {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        align-items: center;
+        @include display-flex(space-evenly, center, column);
         text-align: center;
         position: absolute;
         height: 100vh;
