@@ -3,6 +3,7 @@ import { ICard } from '../../interfaces/card.interface';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../../store/slices/cart';
+import { Button } from '../../common/button/button';
 import './card.scss';
 
 export const Card: React.FC<ICard> = ({
@@ -28,9 +29,11 @@ export const Card: React.FC<ICard> = ({
           <h2>{title}</h2>
         </Link>
         <p>{price}</p>
-        <button className="btn" onClick={() => handleAddCart()}>
-          Add to Cart
-        </button>
+        <Button
+          className="primary"
+          copy="Add to Cart"
+          onClick={() => handleAddCart()}
+        />
       </div>
     </div>
   );
